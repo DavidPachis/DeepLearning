@@ -1,5 +1,6 @@
 import streamlit as st
 import numpy as np
+import matplotlib.pyplot as plt
 import requests
 from keras.models import load_model
 
@@ -14,13 +15,14 @@ best_model = load_model('Gen1-0.h5')
 def generate():
     noise = np.random.normal(loc=0, scale=1, size=(100, 100))
     gen_image = best_model.predict(noise)
-    fig, axe = st.pyplot.subplots(2, 5)
+    fig, axe = plt.subplots(2, 5)
     fig.suptitle('Generated Images from Noise using DCGANs')
     idx = 0
     for i in range(2):
         for j in range(5):
             axe[i, j].imshow(gen_image[idx].reshape(28, 28), cmap='gray')
             idx += 3
+    st.pyplot(fig)
 
 
 # Boton para disparar los generadores
