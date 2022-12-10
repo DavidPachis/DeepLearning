@@ -1,7 +1,6 @@
 import streamlit as st
 import numpy as np
 import requests
-import matplotlib as plt
 from keras.models import load_model
 
 st.title('Taller 4,  GANS')
@@ -15,7 +14,7 @@ best_model = load_model('model.h5')
 def generate():
     noise = np.random.normal(loc=0, scale=1, size=(100, 100))
     gen_image = best_model.predict(noise)
-    fig, axe = plt.subplots(2, 5)
+    fig, axe = st.pyplot.subplots(2, 5)
     fig.suptitle('Generated Images from Noise using DCGANs')
     idx = 0
     for i in range(2):
