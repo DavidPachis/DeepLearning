@@ -8,7 +8,7 @@ st.title('Taller 4,  GANS')
 url = 'https://github.com/DavidPachis/DeepLearning/raw/main/taller4/models/Gen1-0.h5'
 response = requests.get(url)
 open("Gen1-0.h5", "wb").write(response.content)
-best_model = load_model('model.h5')
+best_model = load_model('Gen1-0.h5')
 
 
 def generate():
