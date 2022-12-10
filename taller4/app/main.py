@@ -1,21 +1,7 @@
 import streamlit as st
-import pandas as pd
 import numpy as np
 import requests
-import joblib
 import matplotlib as plt
-
-from sklearn.preprocessing import StandardScaler, PolynomialFeatures
-
-from sklearn.model_selection import train_test_split, GridSearchCV, cross_val_score
-
-from sklearn.pipeline import Pipeline
-
-from sklearn.linear_model import LogisticRegression, Ridge, Lasso
-
-from sklearn.ensemble import RandomForestClassifier
-
-from sklearn.metrics import roc_auc_score, classification_report, ConfusionMatrixDisplay
 from keras.models import load_model
 
 st.title('Taller 4,  GANS')
